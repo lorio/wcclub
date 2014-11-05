@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Artstream: Watercolor Club</title>
+  <%= google_webfonts_link_tag :trade_winds => 400 %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div id="wrap">
+  	<%= render 'layouts/header' %>
+  	<div class="container">
+  		<% flash.each do |name, msg| %>
+       <%= content_tag(:div, msg, class: "alert alert-info") %>
+  		<% end %>
+  		<%= yield %>
+  	</div>
+  </div>
+  <div id="footer">
+    <div class="container">
+      <p>&copy;2014 Lori Ortiz. Users reserve all rights to content. Info: Users or Lori [at] loriortiz.com. Site by<a href="http://artanddesign.us"> Art and Design.</a></p>
+    </div>
+  </div>  
+</body>
+</html>
